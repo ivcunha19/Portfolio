@@ -1,0 +1,29 @@
+.linguagensContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.linguagensMenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+  min-width: 150px;
+  z-index: 10;
+}
+
+.linguagensMenu.show {
+  display: block;
+}
+
+.itemLingugagens {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.itemLingugagens:hover {
+  background-color: #f0f0f0;
+}
