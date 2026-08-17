@@ -11,4 +11,4 @@ JS
 
 ### Wireframe
 
-![wireframe](assets/img/wireframePortfolio.png)
+![wireframe](src/img/wireframePortfolio.png)

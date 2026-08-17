@@ -1,40 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio</title>
-    <script src="assets/js/script.js" defer></script>
-    
-</head>
-<body>
-    <header>
-        <a href="#sobreMim">Sobre mim</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#experiencias">Experiências</a>
-        <a href="#contato">Contato</a>
-        <div class="linguagensContainer" id="linguagensContainer">
-        <button class="dropdown-btn" id="dropdownBtn">PT-BR</button>
-            <div class="linguagensMenu" id="linguagensMenu">
-                <div class="itemLingugagens"><button onclick="alterarLinguagem('port')">PT-BR</button></div>
-                <div class="itemLingugagens"><button onclick="alterarLinguagem('eng')">ENG</button></div>
-            </div>
-        </div>
-    </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+  </head>
+  <body>
+    <div id="root"></div>
 
-    <main>
-        <section id="sobreMim">
-            <div id="sobreTitulo">
-                <h2>Sobre Mim</h2>
-            </div>
-            <div id="sobreTexto">
-
-            </div>
-        </section>
-        <section id="projetos">
-            
-        </section>
-    </main>
-</body>
-<link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
