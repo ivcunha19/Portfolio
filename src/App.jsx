@@ -9,6 +9,7 @@ function App() {
       <Navbar></Navbar>
       <Inicio></Inicio>
       <SpaceBackground></SpaceBackground>
+      <Sobre></Sobre>
     </>
   )
 }

@@ -2,7 +2,8 @@ import React from 'react'
     
 const Sobre = () => {
     return (
-        <div>
+        <div className='h-dvh'>
+            <h1 className='font-title font-bold'>Sobre</h1>
         </div>
     )
 }
