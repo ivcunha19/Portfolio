@@ -3,7 +3,11 @@
 @import "tailwindcss";
 
 @theme { 
-
     --font-sans: 'Inter', sans-serif;
     --font-title: 'Syne', sans-serif;
 }
+
+html {
+    scroll-behavior: smooth;
+}
+

@@ -3,6 +3,8 @@ import Inicio from "./sections/Inicio"
 import Sobre from "./sections/Sobre"
 import SpaceBackground from "./components/SpaceBackground"
 import Projetos from "./sections/Projetos"
+import Experiencias from "./sections/Experiencias"
+import Contato from "./sections/Contato"
 
 function App() {
   return (
@@ -12,8 +14,11 @@ function App() {
       <SpaceBackground></SpaceBackground>
       <Sobre></Sobre>
       <Projetos></Projetos>
+      <Experiencias></Experiencias>
+      <Contato></Contato>
     </>
   )
 }
 
 export default App
+
