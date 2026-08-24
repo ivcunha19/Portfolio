@@ -1,4 +1,3 @@
-// src/components/SpaceBackground.jsx
 import React, { useEffect, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Stars, OrbitControls } from '@react-three/drei';
