@@ -38,3 +38,10 @@ html {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.custom-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  margin-left: 4px;
+  margin-right: 4px;
+}

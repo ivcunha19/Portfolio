@@ -5,6 +5,7 @@ import SpaceBackground from "./components/SpaceBackground"
 import Projetos from "./sections/Projetos"
 import Experiencias from "./sections/Experiencias"
 import Contato from "./sections/Contato"
+import Footer from "./components/Footer"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Projetos></Projetos>
       <Experiencias></Experiencias>
       <Contato></Contato>
+      <Footer></Footer>
     </>
   )
 }

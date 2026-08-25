@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "titulo": "Estudante de Engenharia de Software",
+    "empresa": "PUC Minas",
+    "periodo": "2025 - Presente",
+    "descricao": "Desenvolvimento de projetos acadêmicos e práticos com foco em engenharia de software, sistemas web, arquitetura e banco de dados.",
+    "tecnologias": ["Java", "Spring Boot", "React", "JavaScript", "SQL", "C"]
+  },
+  {
+    "id": 2,
+    "titulo": "Pesquisador voluntário",
+    "empresa": "PUC Minas",
+    "periodo": "2025 - 2025",
+    "descricao": "Projeto: Avaliação de minijogos customizáveis como ferramenta de divulgação científica e combate à desinformação.",
+    "tecnologias": ["Interação homem-máquina"]
+  },
+  {
+    "id": 3,
+    "titulo": "Pesquisador Bolsista",
+    "empresa": "PUC Minas/Cnpq",
+    "periodo": "2026 - Presente",
+    "descricao": "Projeto: Joganinha.\n O projeto investiga e desenvolve uma plataforma de autoria de jogos educativos voltada a professores do ensino fundamental, considerando suas limitações técnicas, de tempo e de contexto escolar.",
+    "tecnologias": ["Interação homem-máquina"]
+  },
+  {
+    "id": 4,
+    "titulo": "Monitor",
+    "empresa": "PUC Minas",
+    "periodo": "2026 - Presente",
+    "descricao": "Monitor da diciplina Algorítimos e Estruturas de Dados II",
+    "tecnologias": ["Interação homem-máquina"]
+  }
+]
