@@ -8,7 +8,7 @@ const CardProjeto = ({ projeto, onClick }) => {
     return (
         <div 
             onClick={onClick}
-            className='w-72 md:w-80 flex-shrink-0 bg-gray-950/90 border border-gray-800 hover:border-blue-500/60 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-blue-500/20 cursor-pointer group pointer-events-auto select-none'
+            className='w-72 md:w-80 shrink-0 bg-gray-950/90 border border-gray-800 hover:border-blue-500/60 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-blue-500/20 cursor-pointer group pointer-events-auto select-none'
         >
             <div>
                 {/* Espaço da Imagem / Placeholder */}

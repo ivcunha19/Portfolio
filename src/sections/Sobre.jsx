@@ -4,7 +4,7 @@ import TechStack from '../components/Tecnologias';
 
 const Sobre = () => {
     return (
-        <div id='sobre' className='relative z-10 pointer-events-none min-h-screen w-full flex flex-col justify-center items-center px-8 gap-12'>
+        <div id='sobre' className='relative z-10 pointer-events-none min-h-screen w-full flex flex-col py-48 justify-center items-center px-8 gap-12'>
             <h1 className='font-title font-bold text-8xl text-white'>Sobre</h1>
             
             <div className='grid grid-cols-3 w-full max-w-6xl items-center gap-10'>

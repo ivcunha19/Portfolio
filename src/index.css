@@ -20,28 +20,6 @@ html {
   }
 }
 
-.animate-infinite-scroll {
-  display: flex;
-  width: max-content;
-  animation: infinite-scroll 30s linear infinite;
-}
-
-.animate-infinite-scroll:hover {
-  animation-play-state: paused;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.custom-container::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 8px;
-  margin-left: 4px;
-  margin-right: 4px;
+*{
+    scrollbar-color: gray black;
 }
