@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const ModalProjeto = ({ projeto, onClose }) => {
+    const { t } = useTranslation();
+
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') {
@@ -13,7 +16,11 @@ const ModalProjeto = ({ projeto, onClose }) => {
 
     if (!projeto) return null;
 
-    const { name, imagem, Tecnologias, Descricao, DescricaoEstendida } = projeto;
+    const { id, name, imagem, Tecnologias, Descricao, DescricaoEstendida } = projeto;
+
+    const translatedName = id ? t(`projetos.items.${id}.name`, { defaultValue: name }) : name;
+    const translatedDesc = id ? t(`projetos.items.${id}.descricao`, { defaultValue: Descricao }) : Descricao;
+    const translatedFullDesc = id ? t(`projetos.items.${id}.descricaoEstendida`, { defaultValue: DescricaoEstendida }) : DescricaoEstendida;
 
     return (
         <div 
@@ -28,7 +35,7 @@ const ModalProjeto = ({ projeto, onClose }) => {
                 <button 
                     onClick={onClose}
                     className="absolute top-4 right-4 text-gray-400 hover:text-white bg-gray-900 hover:bg-gray-800 p-2 rounded-full transition-colors w-10 h-10 flex items-center justify-center text-xl font-bold cursor-pointer"
-                    aria-label="Fechar"
+                    aria-label={t('projetos.close')}
                 >
                     ✕
                 </button>
@@ -38,7 +45,7 @@ const ModalProjeto = ({ projeto, onClose }) => {
                     {imagem ? (
                         <img 
                             src={imagem} 
-                            alt={name} 
+                            alt={translatedName} 
                             className="w-full h-full object-cover rounded-xl"
                         />
                     ) : (
@@ -46,7 +53,7 @@ const ModalProjeto = ({ projeto, onClose }) => {
                             <svg className="w-12 h-12 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
-                            <span className="text-sm font-medium uppercase tracking-wider">Espaço para Imagem do Projeto</span>
+                            <span className="text-sm font-medium uppercase tracking-wider">{t('projetos.modalImageSpace')}</span>
                         </div>
                     )}
                 </div>
@@ -54,7 +61,7 @@ const ModalProjeto = ({ projeto, onClose }) => {
                 {/* Título e Tecnologias */}
                 <div>
                     <h2 className="font-title font-bold text-3xl md:text-4xl text-white mb-3">
-                        {name}
+                        {translatedName}
                     </h2>
                     
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -71,18 +78,18 @@ const ModalProjeto = ({ projeto, onClose }) => {
 
                 {/* Resumo */}
                 <div className="bg-gray-900/60 p-4 rounded-xl border border-gray-800">
-                    <h4 className="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1">Resumo</h4>
+                    <h4 className="text-xs uppercase tracking-wider text-gray-400 font-semibold mb-1">{t('projetos.summary')}</h4>
                     <p className="text-gray-200 text-base leading-relaxed">
-                        {Descricao}
+                        {translatedDesc}
                     </p>
                 </div>
 
                 {/* Descrição Detalhada / Estendida */}
-                {DescricaoEstendida && (
+                {translatedFullDesc && (
                     <div className="bg-blue-950/20 p-5 rounded-xl border border-blue-900/40">
-                        <h4 className="text-xs uppercase tracking-wider text-blue-400 font-semibold mb-2">Descrição Completa</h4>
+                        <h4 className="text-xs uppercase tracking-wider text-blue-400 font-semibold mb-2">{t('projetos.fullDescription')}</h4>
                         <p className="text-gray-200 text-sm md:text-base leading-relaxed whitespace-pre-line">
-                            {DescricaoEstendida}
+                            {translatedFullDesc}
                         </p>
                     </div>
                 )}
@@ -93,7 +100,7 @@ const ModalProjeto = ({ projeto, onClose }) => {
                         onClick={onClose}
                         className="bg-blue-600 hover:bg-blue-500 text-white font-medium px-6 py-2 rounded-xl transition-colors cursor-pointer"
                     >
-                        Fechar
+                        {t('projetos.close')}
                     </button>
                 </div>
             </div>

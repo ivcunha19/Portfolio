@@ -1,24 +1,23 @@
 import React, { useState, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import CardProjeto from '../components/CardProjeto';
 import ModalProjeto from '../components/ModalProjeto';
 import ModalFiltros from '../components/ModalFiltros';
 import listProjetos from '../data/projetos.json';
 
 const Projetos = () => {
+    const { t } = useTranslation();
     const [selectedTech, setSelectedTech] = useState('Todos');
     const [isFilterModalOpen, setIsFilterModalOpen] = useState(false);
     const [selectedProjeto, setSelectedProjeto] = useState(null);
     const scrollContainerRef = useRef(null);
 
-    // Extrai tecnologias únicas para o modal de filtro
     const allTechs = ['Todos', ...Array.from(new Set(listProjetos.flatMap(p => p.Tecnologias || [])))];
 
-    // Filtra projetos conforme tecnologia selecionada
     const filteredProjetos = listProjetos.filter((p) => {
         return selectedTech === 'Todos' || (p.Tecnologias && p.Tecnologias.includes(selectedTech));
     });
 
-    // Navegação manual por botões de seta
     const handleScroll = (direction) => {
         const container = scrollContainerRef.current;
         if (container) {
@@ -31,7 +30,7 @@ const Projetos = () => {
     return (
         <section id='projetos' className='relative z-10 min-h-screen w-full flex flex-col justify-center items-center px-4 py-20 gap-8 overflow-hidden'>
             <h1 className='font-title font-bold text-6xl md:text-8xl text-white text-center'>
-                Projetos
+                {t('projetos.title')}
             </h1>
 
             {/* Botão para Abrir o Modal de Filtros */}
@@ -43,10 +42,10 @@ const Projetos = () => {
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
                     </svg>
-                    <span>Filtrar Projetos</span>
+                    <span>{t('projetos.filterBtn')}</span>
                     {selectedTech !== 'Todos' && (
                         <span className='bg-white text-blue-600 text-xs px-2 py-0.5 rounded-full font-bold'>
-                            Ativo
+                            {t('projetos.active')}
                         </span>
                     )}
                 </button>
@@ -54,11 +53,11 @@ const Projetos = () => {
                 {/* Exibição da tecnologia ativa se houver */}
                 {selectedTech !== 'Todos' && (
                     <span className='bg-gray-900 border border-gray-800 text-blue-300 text-xs px-3 py-1.5 rounded-full flex items-center gap-1.5'>
-                        Tecnologia: <strong>{selectedTech}</strong>
+                        {t('projetos.techLabel')} <strong>{selectedTech}</strong>
                         <button 
                             onClick={() => setSelectedTech('Todos')}
-                            className='hover:text-white ml-1'
-                            title='Remover filtro'
+                            className='hover:text-white ml-1 cursor-pointer'
+                            title={t('projetos.removeFilter')}
                         >
                             ✕
                         </button>
@@ -72,14 +71,14 @@ const Projetos = () => {
                 <button 
                     onClick={() => handleScroll('left')}
                     className='hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-30 bg-gray-950/90 hover:bg-blue-600 text-white p-3.5 rounded-full border border-gray-800 shadow-2xl transition-all hover:scale-110 cursor-pointer items-center justify-center'
-                    aria-label='Rolar para esquerda'
+                    aria-label={t('projetos.scrollLeft')}
                 >
                     ❮
                 </button>
                 <button 
                     onClick={() => handleScroll('right')}
                     className='hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-30 bg-gray-950/90 hover:bg-blue-600 text-white p-3.5 rounded-full border border-gray-800 shadow-2xl transition-all hover:scale-110 cursor-pointer items-center justify-center'
-                    aria-label='Rolar para direita'
+                    aria-label={t('projetos.scrollRight')}
                 >
                     ❯
                 </button>
@@ -101,7 +100,7 @@ const Projetos = () => {
                         </div>
                     ) : (
                         <div className='text-center text-gray-400 py-12 w-full'>
-                            Nenhum projeto encontrado com os filtros selecionados.
+                            {t('projetos.noResults')}
                         </div>
                     )}
                 </div>

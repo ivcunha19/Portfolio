@@ -11,8 +11,9 @@ import {
     SiPostgresql,
     SiHtml5,
     SiNodedotjs,
+    SiPython
 } from "react-icons/si";
-import { FaJava, FaCss3Alt } from "react-icons/fa";
+import { FaJava, FaCss3Alt, FaFigma } from "react-icons/fa";
 
 const techList = [
 {
@@ -24,6 +25,7 @@ const techList = [
     { name: "PostgreSQL", icon: SiPostgresql },
     { name: "C++", icon: SiCplusplus },
     { name: "C", icon: SiC },
+    { name: "Python", icon: SiPython }
     ],
 },
 {
@@ -41,6 +43,7 @@ const techList = [
     items: [
     { name: "Linux", icon: SiLinux },
     { name: "Git", icon: SiGit },
+    { name: "Figma", icon: FaFigma},
     ],
 },
 ];

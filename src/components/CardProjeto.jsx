@@ -1,9 +1,15 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 const CardProjeto = ({ projeto, onClick }) => {
+    const { t } = useTranslation();
+
     if (!projeto) return null;
 
-    const { name, imagem, Tecnologias, Descricao } = projeto;
+    const { id, name, imagem, Tecnologias, Descricao } = projeto;
+
+    const translatedName = id ? t(`projetos.items.${id}.name`, { defaultValue: name }) : name;
+    const translatedDesc = id ? t(`projetos.items.${id}.descricao`, { defaultValue: Descricao }) : Descricao;
 
     return (
         <div 
@@ -16,22 +22,22 @@ const CardProjeto = ({ projeto, onClick }) => {
                     {imagem ? (
                         <img 
                             src={imagem} 
-                            alt={name} 
+                            alt={translatedName} 
                             className='w-full h-full object-cover rounded-xl' 
                         />
                     ) : (
                         <div className='flex flex-col items-center gap-2 text-gray-500 group-hover:text-gray-400 transition-colors p-4 text-center'>
                             <svg className="w-10 h-10 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
-                            <span className='text-xs font-medium uppercase tracking-wider'>Espaço para Imagem</span>
+                            <span className='text-xs font-medium uppercase tracking-wider'>{t('projetos.imageSpace')}</span>
                         </div>
                     )}
                 </div>
 
                 {/* Título */}
                 <h3 className='font-title font-bold text-2xl text-white group-hover:text-blue-400 transition-colors mb-2 line-clamp-1'>
-                    {name}
+                    {translatedName}
                 </h3>
 
                 {/* Tecnologias */}
@@ -46,15 +52,15 @@ const CardProjeto = ({ projeto, onClick }) => {
                     ))}
                 </div>
 
-                {/* Descrição Normal (limitada a 3 linhas para manter altura uniforme) */}
+                {/* Descrição Normal */}
                 <p className='text-gray-300 text-sm leading-relaxed line-clamp-3 mb-2'>
-                    {Descricao}
+                    {translatedDesc}
                 </p>
             </div>
 
-            {/* Rodapé com indicação de clique para modal */}
+            {/* Rodapé */}
             <div className='mt-4 pt-3 flex items-center justify-between text-xs text-gray-400 border-t border-gray-900 group-hover:text-blue-400 transition-colors'>
-                <span className='font-semibold'>Ver detalhes</span>
+                <span className='font-semibold'>{t('projetos.cardDetails')}</span>
                 <span className='text-sm transform group-hover:translate-x-1 transition-transform'>➜</span>
             </div>
         </div>

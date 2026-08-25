@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import defaultEvents from '../data/experiencias.json';
 
 const Circle = () => (
@@ -41,12 +42,13 @@ const EventCard = ({ titulo, empresa, periodo, descricao, tecnologias }) => {
 };
 
 const Timeline = ({ events = defaultEvents }) => {
+    const { t } = useTranslation();
     const list = Array.isArray(events) && events.length > 0 ? events : defaultEvents;
 
     return (
         <div className='relative w-full max-w-5xl mx-auto my-6 px-4 pointer-events-auto flex flex-col items-center'>
-            {/* Linha Pilar Contínua que ocupa todo o espaço vertical */}
-            <div className='absolute left-[32px] md:left-1/2 top-3 bottom-3 w-1 -translate-x-1/2 bg-gradient-to-b from-blue-500 via-blue-600 to-blue-900 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)] z-0' />
+            {/* Linha Pilar Contínua */}
+            <div className='absolute left-8 md:left-1/2 top-3 bottom-3 w-1 -translate-x-1/2 bg-gradient-to-b from-blue-500 via-blue-600 to-blue-900 rounded-full shadow-[0_0_10px_rgba(59,130,246,0.6)] z-0' />
 
             {/* Círculo Inicial do topo */}
             <div className='w-8 flex justify-center items-center relative z-10 self-start md:self-center mb-6 md:w-auto'>
@@ -58,6 +60,12 @@ const Timeline = ({ events = defaultEvents }) => {
                 {list.map((event, index) => {
                     const isLeft = event.direction ? event.direction === 'left' : index % 2 === 0;
 
+                    const id = event.id;
+                    const titulo = id ? t(`experiencias.items.${id}.titulo`, { defaultValue: event.titulo || event.cabecalho }) : (event.titulo || event.cabecalho);
+                    const empresa = id ? t(`experiencias.items.${id}.empresa`, { defaultValue: event.empresa || event.local }) : (event.empresa || event.local);
+                    const periodo = id ? t(`experiencias.items.${id}.periodo`, { defaultValue: event.periodo }) : event.periodo;
+                    const descricao = id ? t(`experiencias.items.${id}.descricao`, { defaultValue: event.descricao || event.conteudo }) : (event.descricao || event.conteudo);
+
                     return (
                         <div 
                             key={event.id || index} 
@@ -67,10 +75,10 @@ const Timeline = ({ events = defaultEvents }) => {
                             <div className='w-full hidden md:block'>
                                 {isLeft ? (
                                     <EventCard 
-                                        titulo={event.titulo || event.cabecalho}
-                                        empresa={event.empresa || event.local}
-                                        periodo={event.periodo}
-                                        descricao={event.descricao || event.conteudo}
+                                        titulo={titulo}
+                                        empresa={empresa}
+                                        periodo={periodo}
+                                        descricao={descricao}
                                         tecnologias={event.tecnologias}
                                     />
                                 ) : (
@@ -86,10 +94,10 @@ const Timeline = ({ events = defaultEvents }) => {
                             {/* Mobile: Card sempre na Coluna da direita */}
                             <div className='w-full block md:hidden'>
                                 <EventCard 
-                                    titulo={event.titulo || event.cabecalho}
-                                    empresa={event.empresa || event.local}
-                                    periodo={event.periodo}
-                                    descricao={event.descricao || event.conteudo}
+                                    titulo={titulo}
+                                    empresa={empresa}
+                                    periodo={periodo}
+                                    descricao={descricao}
                                     tecnologias={event.tecnologias}
                                 />
                             </div>
@@ -98,10 +106,10 @@ const Timeline = ({ events = defaultEvents }) => {
                             <div className='w-full hidden md:block'>
                                 {!isLeft ? (
                                     <EventCard 
-                                        titulo={event.titulo || event.cabecalho}
-                                        empresa={event.empresa || event.local}
-                                        periodo={event.periodo}
-                                        descricao={event.descricao || event.conteudo}
+                                        titulo={titulo}
+                                        empresa={empresa}
+                                        periodo={periodo}
+                                        descricao={descricao}
                                         tecnologias={event.tecnologias}
                                     />
                                 ) : (
@@ -122,4 +130,3 @@ const Timeline = ({ events = defaultEvents }) => {
 };
 
 export default Timeline;
-

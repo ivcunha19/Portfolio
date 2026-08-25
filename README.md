@@ -1,13 +1,16 @@
 # Portfolio
 Esse projeto se consiste em um portifólio tech, com o intuito de apresentar a minha história como desenvolvedor, incluindo informações sobre mim, projetos e experiências que vivi. Assim compartilhando um pouco do que sou como desenvolvedor e como posso agregar em 
 
-### Tenologias previstas
+### Tenologias utilizadas
 
 ReactJS
 TailwindCSS
 HTML
 CSS
 JS
+i18next
+ThreeJS
+React Three Fiber
 
 ### Wireframe
 
