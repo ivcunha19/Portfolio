@@ -13,7 +13,6 @@ const Footer = () => {
 
                 <div className='w-24 h-0.5 bg-linear-to-r from-transparent via-blue-500/50 to-transparent my-1' />
 
-                {/* Copyright */}
                 <div className='flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm text-gray-400 font-sans'>
                     <p>{t('footer.rights', { year: new Date().getFullYear() })}</p>
                     <span className='hidden sm:inline text-gray-600'>•</span>

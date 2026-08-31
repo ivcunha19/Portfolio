@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Voe Alto",
-    "imagem": "",
+    "imagem": "src/img/imgsProjetos/VoeAlto.png",
     "Tecnologias": ["Html", "Css", "Javascript"],
     "Descricao": "Sistema web de recomendação de locais de viagens.",
     "DescricaoEstendida": "Sistema web de recomendação de locais de viagens. Este foi o meu primeiro sistema web completo, focado em ajudar usuários a encontrar destinos de viagem com base em suas preferências."
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "name": "Gestão AAPC",
-    "imagem": "",
+    "imagem": "src/img/imgsProjetos/Patinhas.png",
     "Tecnologias": ["Html", "Css", "Javascript", "Java", "Springboot", "MariaDB"],
     "Descricao": "Sistema web de gestão Interna da Associação de Advogados da Copasa.",
     "DescricaoEstendida": "Sistema web de gestão interna para a Associação de Advogados da Copasa. Fui membro da equipe que desenvolveu a aplicação durante a disciplina extensionista Trabalho Interdisciplinar: Aplicações Reais."
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "name": "Patinhas do Bem",
-    "imagem": "",
+    "imagem": "src/img/imgsProjetos/AAPC.png",
     "Tecnologias": ["Html", "Css", "Javascript", "Java", "Springboot", "MariaDB"],
     "Descricao": "Sistema web de adoção de Pets.",
     "DescricaoEstendida": "Sistema web focado na facilitação do processo de adoção de animais de estimação. Projeto realizado em equipe durante a disciplina Trabalho Interdisciplinar II."

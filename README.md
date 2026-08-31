@@ -21,22 +21,58 @@ React Three Fiber
 
 src
 |   components
+|   |   CardProjeto.jsx
+|   |   Footer.jsx
+|   |   Globe.jsx
+|   |   Menulang.jsx
+|   |   MenuTheme.jsx
+|   |   MinhasRedes.jsx
+|   |   ModalFiltros.jsx
+|   |   ModalProjeto.jsx
 |   |   Navbar.jsx
-|   |   Card.jsx
-|   |   footer.jsx
+|   |   SpaceBackground.jsx
+|   |   Tecnologias.jsx
+|   |   Timeline.jsx
 |   img
-|   |   template.png
+|   |   wireframePortfolio.png
+|   |   pfpPortfolio.jpeg
+|   Data
+|   |   experiencias.json
+|   |   projetos.json
 |   sections
 |   |   Sobre.jsx
 |   |   Experiencias.jsx
 |   |   Contato.jsx
 |   |   Projetos.jsx
+|   |   Inicio.jsx
 |   App.jsx
 |   index.html
 |   main.jsx
+|   i18n.js
 |   
 index.html
 package.json
 README.md
 vite.config.js
 
+### Link do site
+
+https://portfolio-xi-olive-80.vercel.app/
+
+### Instruções de uso e desenvolvimento
+
+Após obter o código-fonte do projeto, abra um terminal na pasta principal.
+
+Instale as dependências:
+
+npm install
+
+Após a instalação, execute o projeto em ambiente de desenvolvimento:
+
+npm run dev
+
+O terminal apresentará o endereço local da aplicação, normalmente semelhante a:
+
+http://localhost:5173
+
+Acesse esse endereço pelo navegador para visualizar o site.

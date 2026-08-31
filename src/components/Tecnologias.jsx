@@ -1,4 +1,6 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
+
 import {
     SiSpringboot,
     SiCplusplus,
@@ -49,10 +51,11 @@ const techList = [
 ];
 
 export default function TechStack() {
+    const { t } = useTranslation();
 return (
     <div className="w-full max-w-6xl mt-12 flex flex-col gap-10 pointer-events-auto col-span-3">
     <h2 className="font-title font-bold text-4xl text-white text-center">
-        Tecnologias
+        {t('projetos.techLabel')}
     </h2>
 
     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
