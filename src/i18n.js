@@ -106,7 +106,7 @@ const resources = {
                 connError: 'Erro de conexão. Verifique sua internet e tente novamente.'
             },
             footer: {
-                rights: '© {{year}} Ivo Cunha. Todos os direitos reservados.',
+                rights: '© {{year}} Ivo Cunha.',
                 developedWith: 'Desenvolvido com'
             }
         }
@@ -214,7 +214,7 @@ const resources = {
                 connError: 'Connection error. Check your internet connection and try again.'
             },
             footer: {
-                rights: '© {{year}} Ivo Cunha. All rights reserved.',
+                rights: '© {{year}} Ivo Cunha.',
                 developedWith: 'Developed with'
             }
         }

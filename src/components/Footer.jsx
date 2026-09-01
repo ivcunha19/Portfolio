@@ -16,9 +16,6 @@ const Footer = () => {
                 <div className='flex flex-col sm:flex-row items-center justify-center gap-2 text-xs sm:text-sm text-gray-400 font-sans'>
                     <p>{t('footer.rights', { year: new Date().getFullYear() })}</p>
                     <span className='hidden sm:inline text-gray-600'>•</span>
-                    <p className='flex items-center gap-1.5 text-gray-400'>
-                        {t('footer.developedWith')} <FaHeart className='text-red-500 text-xs animate-pulse' /> e React
-                    </p>
                 </div>
             </div>
         </footer>
