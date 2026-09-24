@@ -1,17 +1,37 @@
 import React, { useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
 
 const ModalProjeto = ({ projeto, onClose }) => {
     const { t } = useTranslation();
 
     useEffect(() => {
+        // Bloqueia o scroll do body enquanto o modal estiver aberto
+        const originalOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+
         const handleKeyDown = (e) => {
             if (e.key === 'Escape') {
                 onClose();
             }
         };
+
+        // Fecha automaticamente se a página de fundo rolar
+        const initialScrollY = window.scrollY;
+        const handleWindowScroll = () => {
+            if (Math.abs(window.scrollY - initialScrollY) > 20) {
+                onClose();
+            }
+        };
+
         window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
+        window.addEventListener('scroll', handleWindowScroll, { passive: true });
+
+        return () => {
+            document.body.style.overflow = originalOverflow;
+            window.removeEventListener('keydown', handleKeyDown);
+            window.removeEventListener('scroll', handleWindowScroll);
+        };
     }, [onClose]);
 
     if (!projeto) return null;
@@ -22,13 +42,13 @@ const ModalProjeto = ({ projeto, onClose }) => {
     const translatedDesc = id ? t(`projetos.items.${id}.descricao`, { defaultValue: Descricao }) : Descricao;
     const translatedFullDesc = id ? t(`projetos.items.${id}.descricaoEstendida`, { defaultValue: DescricaoEstendida }) : DescricaoEstendida;
 
-    return (
+    const modalContent = (
         <div 
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md p-3 sm:p-4 pointer-events-auto animate-fadeIn"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 backdrop-blur-md p-3 sm:p-4 pointer-events-auto animate-fadeIn"
             onClick={onClose}
         >
             <div 
-                className="bg-gray-950 border border-gray-800 text-white rounded-2xl md:rounded-3xl w-full max-w-2xl max-h-[92vh] overflow-y-auto p-4 sm:p-6 md:p-8 shadow-2xl relative flex flex-col gap-4 sm:gap-5 border-blue-500/20"
+                className="bg-gray-950 border border-gray-800 text-white rounded-2xl md:rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-y-auto overscroll-contain p-4 sm:p-6 md:p-8 shadow-2xl relative flex flex-col gap-4 sm:gap-5 border-blue-500/20"
                 onClick={(e) => e.stopPropagation()}
             >
                 {/* Botão de Fechar */}
@@ -106,6 +126,8 @@ const ModalProjeto = ({ projeto, onClose }) => {
             </div>
         </div>
     );
+
+    return typeof document !== 'undefined' ? createPortal(modalContent, document.body) : modalContent;
 };
 
 export default ModalProjeto;
