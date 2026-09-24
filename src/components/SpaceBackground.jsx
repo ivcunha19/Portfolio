@@ -5,13 +5,15 @@ import Globe from './Globe.jsx';
 
 const SpaceBackground = () => {
   const [targetContainer, setTargetContainer] = useState(null);
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
 
   useEffect(() => {
     setTargetContainer(document.body);
+    setIsTouchDevice('ontouchstart' in window || navigator.maxTouchPoints > 0);
   }, []);
 
   return (
-    <div className="fixed inset-0 w-screen h-screen bg-black z-0 pointer-events-auto">
+    <div className={`fixed inset-0 w-screen h-screen bg-black z-0 ${isTouchDevice ? 'pointer-events-none' : 'pointer-events-auto'}`}>
       <Canvas 
         camera={{ position: [0, 0, 6], fov: 45 }}
         eventSource={targetContainer || undefined}
@@ -23,10 +25,11 @@ const SpaceBackground = () => {
           makeDefault
           enableZoom={false} 
           enablePan={false}
-          enableRotate={true}
+          enableRotate={!isTouchDevice}
           autoRotate={true}
           autoRotateSpeed={0.8}
           rotateSpeed={1.2}
+          touches={{ ONE: null, TWO: null }}
         />
         <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
 

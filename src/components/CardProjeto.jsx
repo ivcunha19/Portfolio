@@ -14,11 +14,11 @@ const CardProjeto = ({ projeto, onClick }) => {
     return (
         <div 
             onClick={onClick}
-            className='w-72 md:w-80 shrink-0 bg-gray-950/90 border border-gray-800 hover:border-blue-500/60 rounded-2xl p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 shadow-lg hover:shadow-blue-500/20 cursor-pointer group pointer-events-auto select-none'
+            className='w-[270px] sm:w-72 md:w-80 shrink-0 snap-center bg-gray-950/90 border border-gray-800 hover:border-blue-500/60 rounded-2xl p-4 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 active:scale-98 shadow-lg hover:shadow-blue-500/20 cursor-pointer group pointer-events-auto select-none'
         >
             <div>
                 {/* Espaço da Imagem / Placeholder */}
-                <div className='w-full h-44 bg-gray-900 rounded-xl overflow-hidden mb-4 flex items-center justify-center border border-gray-800 group-hover:border-gray-700 transition-colors relative'>
+                <div className='w-full h-36 sm:h-44 bg-gray-900 rounded-xl overflow-hidden mb-3.5 flex items-center justify-center border border-gray-800 group-hover:border-gray-700 transition-colors relative'>
                     {imagem ? (
                         <img 
                             src={imagem} 
@@ -27,16 +27,16 @@ const CardProjeto = ({ projeto, onClick }) => {
                         />
                     ) : (
                         <div className='flex flex-col items-center gap-2 text-gray-500 group-hover:text-gray-400 transition-colors p-4 text-center'>
-                            <svg className="w-10 h-10 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <svg className="w-8 h-8 sm:w-10 sm:h-10 opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
-                            <span className='text-xs font-medium uppercase tracking-wider'>{t('projetos.imageSpace')}</span>
+                            <span className='text-[10px] sm:text-xs font-medium uppercase tracking-wider'>{t('projetos.imageSpace')}</span>
                         </div>
                     )}
                 </div>
 
                 {/* Título */}
-                <h3 className='font-title font-bold text-2xl text-white group-hover:text-blue-400 transition-colors mb-2 line-clamp-1'>
+                <h3 className='font-title font-bold text-xl sm:text-2xl text-white group-hover:text-blue-400 transition-colors mb-2 line-clamp-1'>
                     {translatedName}
                 </h3>
 
@@ -45,7 +45,7 @@ const CardProjeto = ({ projeto, onClick }) => {
                     {Tecnologias && Tecnologias.map((tech, index) => (
                         <span 
                             key={index}
-                            className='bg-blue-950/60 text-blue-300 text-xs px-2.5 py-1 rounded-md border border-blue-800/40 font-medium'
+                            className='bg-blue-950/60 text-blue-300 text-[10px] sm:text-xs px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md border border-blue-800/40 font-medium'
                         >
                             {tech}
                         </span>
@@ -53,13 +53,13 @@ const CardProjeto = ({ projeto, onClick }) => {
                 </div>
 
                 {/* Descrição Normal */}
-                <p className='text-gray-300 text-sm leading-relaxed line-clamp-3 mb-2'>
+                <p className='text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-3 mb-2'>
                     {translatedDesc}
                 </p>
             </div>
 
             {/* Rodapé */}
-            <div className='mt-4 pt-3 flex items-center justify-between text-xs text-gray-400 border-t border-gray-900 group-hover:text-blue-400 transition-colors'>
+            <div className='mt-3 pt-3 flex items-center justify-between text-xs text-gray-400 border-t border-gray-900 group-hover:text-blue-400 transition-colors'>
                 <span className='font-semibold'>{t('projetos.cardDetails')}</span>
                 <span className='text-sm transform group-hover:translate-x-1 transition-transform'>➜</span>
             </div>

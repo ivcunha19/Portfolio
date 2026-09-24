@@ -9,7 +9,7 @@ export default function Globe() {
   const globe = useMemo(() => {
     const instance = new ThreeGlobe()
       .globeImageUrl('https://unpkg.com/three-globe/example/img/earth-night.jpg')
-      .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png')
+      .bumpImageUrl('https://unpkg.com/three-globe/example/img/earth-topology.png');
 
     const globeMaterial = instance.globeMaterial();
     globeMaterial.color = new THREE.Color(0x0a192f);
@@ -21,12 +21,13 @@ export default function Globe() {
   }, []);
 
   useEffect(() => {
-    if (globeRef.current) {
-      globeRef.current.add(globe);
+    const currentRef = globeRef.current;
+    if (currentRef) {
+      currentRef.add(globe);
     }
     return () => {
-      if (globeRef.current) {
-        globeRef.current.remove(globe);
+      if (currentRef) {
+        currentRef.remove(globe);
       }
     };
   }, [globe]);
