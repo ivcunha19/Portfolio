@@ -1,5 +1,6 @@
-# Portfolio
-Esse projeto se consiste em um portifólio tech, com o intuito de apresentar a minha história como desenvolvedor, incluindo informações sobre mim, projetos e experiências que vivi. Assim compartilhando um pouco do que sou como desenvolvedor e como posso agregar em 
+# Portfólio
+
+Este projeto é um portfólio tech desenvolvido para apresentar minha trajetória na programação, reunindo informações sobre mim, projetos práticos e experiências relevantes. O objetivo é compartilhar um pouco de quem sou como desenvolvedor e como posso agregar valor a novos desafios e equipes.
 
 ### Tenologias utilizadas
 

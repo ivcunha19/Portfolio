@@ -10,7 +10,7 @@ const Inicio = () => {
             className='relative z-10 min-h-[calc(100vh-70px)] w-full flex flex-col items-center justify-center px-4 sm:px-6 md:px-12 text-white pointer-events-none text-center select-none py-12'
         >
             <div className='flex flex-col items-center gap-2 sm:gap-4 max-w-4xl'>
-                <h3 className='text-sm sm:text-lg md:text-xl font-medium text-blue-400 tracking-widest uppercase'>
+                <h3 className='text-sm sm:text-lg md:text-2xl font-medium '>
                     {t('inicio.greeting')}
                 </h3>
                 <h1 className='text-4xl sm:text-6xl md:text-7xl lg:text-9xl font-bold font-title tracking-tight leading-tight'>

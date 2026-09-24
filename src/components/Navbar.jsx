@@ -95,7 +95,6 @@ const Navbar = () => {
                     className='font-title font-bold text-xl sm:text-2xl tracking-tight hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer select-none'
                 >
                     <span>Ivo</span>
-                    <span className='text-blue-500'>.</span>
                 </a>
 
                 {/* Navegação Desktop (md:flex) */}
