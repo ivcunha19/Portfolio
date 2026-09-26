@@ -63,9 +63,12 @@ export default function TechStack() {
                 {techList.map((section) => (
                     <div
                         key={section.title}
-                        className="bg-gray-950/90 p-5 sm:p-6 rounded-2xl border border-gray-900 flex flex-col gap-5 shadow-lg backdrop-blur-sm"
+                        className="relative bg-slate-900/40 backdrop-blur-xl backdrop-saturate-150 p-5 sm:p-6 rounded-2xl border border-white/10 hover:border-blue-500/50 flex flex-col gap-5 shadow-[0_8px_32px_0_rgba(0,0,0,0.37)] shadow-black/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-blue-500/20 group/card overflow-hidden"
                     >
-                        <h3 className="text-lg sm:text-xl font-bold text-white border-b border-gray-800 pb-3 text-left font-title">
+                        {/* Linha reflexiva superior de especularidade do vidro */}
+                        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent pointer-events-none" />
+
+                        <h3 className="text-lg sm:text-xl font-bold text-white border-b border-white/10 pb-3 text-left font-title">
                             {section.title}
                         </h3>
 
@@ -75,10 +78,10 @@ export default function TechStack() {
                                 return (
                                     <div
                                         key={tech.name}
-                                        className="group bg-gray-900/60 border border-gray-800/80 hover:border-cyan-500/50 p-3 sm:p-4 rounded-xl flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/10 active:scale-95"
+                                        className="group bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 hover:border-blue-500/60 backdrop-blur-sm p-3 sm:p-4 rounded-xl flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-500/20 active:scale-95"
                                     >
-                                        <IconComponent className="text-2xl sm:text-3xl text-gray-300 group-hover:text-cyan-400 transition-colors" />
-                                        <span className="text-gray-200 font-medium text-xs text-center line-clamp-1">
+                                        <IconComponent className="text-2xl sm:text-3xl text-gray-300 group-hover:text-blue-400 transition-colors drop-shadow-sm" />
+                                        <span className="text-gray-200 group-hover:text-white font-medium text-xs text-center line-clamp-1 transition-colors">
                                             {tech.name}
                                         </span>
                                     </div>
