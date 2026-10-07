@@ -13,7 +13,7 @@
     "empresa": "PUC Minas",
     "periodo": "2025 - 2025",
     "descricao": "Projeto: Avaliação de minijogos customizáveis como ferramenta de divulgação científica e combate à desinformação.",
-    "tecnologias": ["Interação homem-máquina"]
+    "tecnologias": ["Interação Humano-Computador"]
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "empresa": "PUC Minas/Cnpq",
     "periodo": "2026 - Presente",
     "descricao": "Projeto: Joganinha.\n O projeto investiga e desenvolve uma plataforma de autoria de jogos educativos voltada a professores do ensino fundamental, considerando suas limitações técnicas, de tempo e de contexto escolar.",
-    "tecnologias": ["Interação homem-máquina"]
+    "tecnologias": ["Interação Humano-Computador"]
   },
   {
     "id": 4,
